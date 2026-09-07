@@ -16,6 +16,7 @@ class BotClient(commands.Bot):
 
     async def setup_hook(self) -> None:
         await self.load_extension("cogs.economy")
+        await self.load_extension("cogs.utilities")
 
         self.tree.copy_global_to(guild=DEV_GUILD)
         synced_cmds = await self.tree.sync(guild=DEV_GUILD)
